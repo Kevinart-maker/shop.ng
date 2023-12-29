@@ -16,10 +16,10 @@ function scrollLeft(distance) {
   
   // Add click event listeners to the left and right buttons
   scrollLeftButton.addEventListener('click', function() {
-    scrollLeft(50); // Scroll left by 50 pixels (adjust the value as needed)
+    scrollLeft(100); // Scroll left by 50 pixels (adjust the value as needed)
   });
   
   scrollRightButton.addEventListener('click', function() {
-    scrollRight(50); // Scroll right by 50 pixels (adjust the value as needed)
+    scrollRight(100); // Scroll right by 50 pixels (adjust the value as needed)
   });
   
