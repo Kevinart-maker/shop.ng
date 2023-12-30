@@ -26,10 +26,12 @@ nav{
     gap: 2rem;
     padding: 20px;
 }
-nav .logo{
+nav .logo a{
+    text-decoration: none;
     font-size: 2rem;
     font-weight: 700;
     user-select: none;
+    color: #000000;
 }
 .navlist{
     list-style: none;
@@ -40,18 +42,38 @@ nav .logo{
     text-decoration: none;
     color: #000000;
 }
-.navlist a::after{
-    content: '';
-    display: block;
-    height: 2px;
-    width: 0%;
-    background-color: #000000;
-    transition: 0.2s width linear;
-}
-.navlist a:hover::after{width: 100%;}
-.navlist li{opacity: 0.8;}
+.navlist li{opacity: 0.6;}
 .navlist li:hover{
-    transform: scale(1.1);
+    opacity: 1;
+}
+
+.dropdown{
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+.dropdown #drop-list{
+    position: absolute;
+    top: 1.4rem;
+    background-color: #000000;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    opacity: 0;
+    transition: 0.3s opacity ease;
+}
+.dropdown:hover  #drop-list{
+    opacity: 1;
+}
+.dropdown #drop-list a{
+    color: #fff;
+    opacity: 0.6;
+}
+.dropdown #drop-list .dropdowns a:hover{
     opacity: 1;
 }
 nav .searcharea{
@@ -69,8 +91,10 @@ nav .icons{
     align-items: center;
     gap: 1rem;
 }
+nav .icons a{
+    color: #000000;
+}
 nav .search-icon{cursor: pointer;}
-
 
 /* homepage */
 .homepage{
@@ -108,16 +132,6 @@ nav .search-icon{cursor: pointer;}
     background: none;
     color: #000000;
     transform: scale(1.06);
-}
-
-.testi{
-    display: flex;
-    gap: 1rem;
-}
-.testi .line{
-    background-color: #D9D9D9;
-    width: 2px;
-    height: 100%;
 }
 
 /* rightside */
@@ -162,11 +176,18 @@ nav .search-icon{cursor: pointer;}
 }
 .productspage button{
     background: none;
+    border: none;
+}
+.productspage button a{
+    background: none;
     padding: 10px 40px 10px 40px;
     border-radius: 20px;
     border: 0.5px solid #000000;
+    text-decoration: none;
+    color: #000000;
 }
-.productspage button:hover{
+
+.productspage button a:hover{
     background-color: #000000;
     color: #fff;
 }
@@ -180,6 +201,9 @@ nav .search-icon{cursor: pointer;}
     max-width: 100%;
     background-color: var(--gray);
     border-radius: 15px;
+}
+.products-box img:hover{
+    border: 1px solid #000000;
 }
 .btm-line{
     height: 2px;
@@ -359,29 +383,68 @@ footer .bottomside{
     left: 0;
 } 
 #checkInput:checked ~ .lines .one{
-    transform:  translate(0, 17px) rotate(45deg);
+    transform: rotate(45deg);
 }
 #checkInput:checked ~ .lines .middle{
-    opacity: 0;
+    display: none;
 }
 #checkInput:checked ~ .lines .two{
-    transform: translate(-5px, 0) rotate(-45deg);
+    transform: translateY(-6px) rotate(-45deg);
+}
+#checkInput:checked ~ .line{
+    transform-origin: center;
+}
+
+
+.dropdown{
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+.dropdown #drop-list{
+    position: static;
+    top: 1.4rem;
+    background-color: #000000;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    display: none;
+    transition: 0.3s opacity ease;
+}
+.dropdown:hover  #drop-list{
+    display: flex;
+}
+.dropdown #drop-list a{
+    color: #fff;
+    opacity: 0.6;
+}
+.dropdown #drop-list .dropdowns a:hover{
+    opacity: 1;
 }
 
 
 nav .searcharea{
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
 }
 nav .searcharea input{
+    position: absolute;
+    top: 120%;
+    background-color: #fff;
     padding: 5px;
     border-radius: 5px;
     color: #000000;
-}
-nav .searcharea input{
-    display: none;
+    border: 0.3px solid var(--gray);
+    opacity: 0;
+    transition: 0.3s opacity ease;
 }
 
 
@@ -422,4 +485,12 @@ nav .searcharea input{
     position: relative;
     z-index: 300;
 }
+}
+
+
+.show{
+    opacity: 1 !important;
+}
+.hide{
+    opacity: 0;
 }

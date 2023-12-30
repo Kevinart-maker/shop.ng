@@ -1,0 +1,142 @@
+.product-detail-page{
+    padding: 20px;
+}
+
+.product-detail-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.product-leftside{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.product-leftside .product-img{
+    background-color: #F0F0F0;
+    border-radius: 1.25rem;
+}
+.product-leftside .product-img img{
+    max-width: 100%;
+}
+
+.vertical-detail{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.vertical-detail img{
+    height: 10rem;
+}
+.vertical-detail img:hover{
+    border: 1px solid #000000;
+    border-radius: 20px;
+}
+.product-rightside p{
+    font-size: 0.8rem;
+}
+.product-rightside img{
+    max-width: 10rem;
+}
+.product-rightside h1{
+    font-size: 2rem;
+}
+.product-rightside h3{
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+.product-rightside{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.product-size{
+    display: flex;
+    gap: 1rem;
+}
+.product-size p{
+    padding: 10px;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.product-size p:hover{
+    background-color: #000000;
+    color: #fff;
+}
+.add-cart{
+    display: flex;
+    gap: 1rem;
+}
+.add-cart input{
+    background-color: #F0F0F0;
+    border: none;
+    width: 2rem;
+}
+.add-cart .input{
+    background-color: #F0F0F0;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+.add-cart button{
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+.add-cart button:hover{
+    background-color: #F0F0F0;
+    color: #000000;
+}
+
+
+@media screen and (max-width: 800px){
+    .product-detail-container{
+        padding: 10px;
+        gap: 2rem;
+    }
+
+    .product-detail-page{
+        padding: 0;
+    }
+    .vertical-detail{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .vertical-detail img{
+        height: 8rem;
+    }
+    .product-leftside .product-img{
+        background-color: #F0F0F0;
+        border-radius: 1.25rem;
+        width: 100%;
+        height: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .product-leftside .product-img img{
+        max-width: 100%;
+    }
+
+    .product-rightside{
+        width: 100%;
+        gap: 1rem;
+    }
+}
